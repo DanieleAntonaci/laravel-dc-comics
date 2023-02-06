@@ -1,7 +1,15 @@
 @extends('layout.main-layout')
 
 @section('title')
-    <h1>
-        gdhjsgdhjwgDJH
-    </h1>
+    <ul>
+        @foreach ($people as $person)
+        <li>
+            <a href="{{route('person.show', $person)}}">
+                {{$person -> name}} {{$person -> lastName}}
+            </a>
+            -
+            <a href="{{route('person.destroy', $person)}}">Delete</a>
+        </li>
+        @endforeach
+    </ul>
 @endsection

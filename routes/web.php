@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', [MainController::class, 'index'])
+    ->name('index');
+
+Route::get('/person/show/{person}', [MainController::class, 'personShow'])
+    ->name('person.show');
+
+Route::get('/person/destroy/{person}', [MainController::class, 'personDestroy'])
+    ->name('person.destroy');
