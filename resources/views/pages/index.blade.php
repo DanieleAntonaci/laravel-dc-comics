@@ -11,7 +11,7 @@
             -
             <a href="{{route('person.destroy', $person)}}">Delete</a>
             -
-            <a href="{{route('person.update',$person)}}">Update</a>
+            <a href="{{route('person.edit',$person)}}">Update</a>
         </li>
         @endforeach
     </ul>
