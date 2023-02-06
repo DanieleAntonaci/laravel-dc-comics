@@ -22,3 +22,9 @@ Route::get('/person/show/{person}', [MainController::class, 'personShow'])
 
 Route::get('/person/destroy/{person}', [MainController::class, 'personDestroy'])
     ->name('person.destroy');
+
+Route::get('/person/create', [MainController::class, 'personCreate'])
+    ->name('person.create');
+
+Route::post('/person/store', [MainController::class, 'personStore'])
+    ->name('person.store');

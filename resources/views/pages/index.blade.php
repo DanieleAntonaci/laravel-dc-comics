@@ -1,6 +1,7 @@
 @extends('layout.main-layout')
 
-@section('title')
+@section('list-person')
+<a href="{{route('person.create')}}">Create new perosn</a>
     <ul>
         @foreach ($people as $person)
         <li>
