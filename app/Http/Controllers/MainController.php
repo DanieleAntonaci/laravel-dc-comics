@@ -29,8 +29,29 @@ class MainController extends Controller
             'dateOfBirth' => 'required',
             'height' => 'nullable'
         ]);
-        // $data = $request -> all();
+
         $person = new Person();
+
+        $person->name = $data['name'];
+        $person->lastName = $data['lastName'];
+        $person->dateOfBirth = $data['dateOfBirth'];
+        $person->height = $data['height'];
+
+        $person->save();
+
+        return redirect()->route('index');
+    }
+    public function personEdit(Person $person){
+        return view('pages.editPerson', compact('person'));
+    }
+
+    public function personUpdate(Request $request, Person $person){
+        $data = $request->validate([
+            'name' => 'required|string|max:32',
+            'lastName' => 'required|string|max:32',
+            'dateOfBirth' => 'required',
+            'height' => 'nullable'
+        ]);
 
         $person->name = $data['name'];
         $person->lastName = $data['lastName'];

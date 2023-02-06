@@ -7,5 +7,6 @@
     @yield('list-person')
     @yield('person')
     @yield('form-add')
+    @yield('form-edit')
 </body>
 </html>

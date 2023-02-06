@@ -1,6 +1,9 @@
 @extends('layout.main-layout')
 
 @section('form-add')
+    <h1>
+        Create new person
+    </h1>
     <form action="{{route('person.store')}}" method="POST">
         @csrf
 
